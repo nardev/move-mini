@@ -12,7 +12,15 @@ radio.onReceivedNumber(function (receivedNumber) {
     }
 })
 input.onButtonPressed(Button.A, function () {
+    basic.pause(1000)
+    kitronik_servo_lite.driveForwards(100)
+})
+input.onButtonPressed(Button.AB, function () {
     kitronik_servo_lite.stop()
+})
+input.onButtonPressed(Button.B, function () {
+    basic.pause(1000)
+    kitronik_servo_lite.driveBackwards(100)
 })
 let strip = neopixel.create(DigitalPin.P0, 5, NeoPixelMode.RGB)
 strip.setBrightness(255)
