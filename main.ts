@@ -15,15 +15,31 @@ input.onButtonPressed(Button.A, function () {
     basic.pause(1000)
     kitronik_servo_lite.driveForwards(100)
 })
+function flashlights () {
+    for (let index = 0; index <= 10; index++) {
+        strip.showColor(neopixel.colors(NeoPixelColors.Blue))
+        strip.show()
+        basic.pause(100)
+        strip.showColor(neopixel.colors(NeoPixelColors.White))
+        strip.show()
+        basic.pause(100)
+        strip.showColor(neopixel.colors(NeoPixelColors.Red))
+        strip.show()
+        basic.pause(100)
+    }
+    strip.showRainbow(1, 360)
+}
 input.onButtonPressed(Button.AB, function () {
     kitronik_servo_lite.stop()
+    flashlights()
 })
 input.onButtonPressed(Button.B, function () {
     basic.pause(1000)
     kitronik_servo_lite.driveBackwards(100)
 })
-let strip = neopixel.create(DigitalPin.P0, 5, NeoPixelMode.RGB)
-strip.setBrightness(255)
+let strip: neopixel.Strip = null
+strip = neopixel.create(DigitalPin.P0, 5, NeoPixelMode.RGB)
+strip.setBrightness(150)
 strip.showColor(neopixel.colors(NeoPixelColors.Red))
 strip.show()
 basic.pause(100)
