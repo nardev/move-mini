@@ -52,7 +52,6 @@ basic.pause(100)
 strip.showColor(neopixel.colors(NeoPixelColors.Purple))
 strip.show()
 basic.pause(100)
-strip.showRainbow(1, 360)
 radio.setGroup(1)
 basic.showIcon(IconNames.Happy)
 basic.forever(function () {
